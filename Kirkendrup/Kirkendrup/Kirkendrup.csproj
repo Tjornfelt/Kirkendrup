@@ -21,6 +21,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -221,7 +223,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\NavigationItemMapper.cs" />
     <Compile Include="Models\FrontPageModel.cs" />
+    <Compile Include="Models\GlobalModel.cs" />
+    <Compile Include="Models\HelperModels\NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -248,7 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Partials\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -325,6 +329,9 @@
       <DebugInfo>False</DebugInfo>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\_MainMenu.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -354,6 +361,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\packages\UmbracoCms.7.1.1\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.1.1\build\UmbracoCms.targets')" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

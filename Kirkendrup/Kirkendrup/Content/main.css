@@ -6,14 +6,22 @@ body {
   font-size: 12px;
   background: #f0f0f0; }
 
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 0.5em 0 0.8em 0; }
+
+p {
+  line-height: 1.5em; }
+
 #site-wrapper {
-  width: 970px;
+  width: 980px;
   margin: 0 auto;
-  min-height: 500px;
-  background: white; }
+  min-height: 500px; }
   #site-wrapper header {
     height: 85px;
-    border-bottom: 4px solid red; }
+    border-bottom: 4px solid red;
+    background: white; }
     #site-wrapper header a.logo {
       display: inline-block;
       padding: 15px 0 0 30px;
@@ -21,4 +29,47 @@ body {
       font-weight: bold;
       color: #353535;
       text-decoration: none; }
+  #site-wrapper .main-menu {
+    height: 65px;
+    text-align: right; }
+    #site-wrapper .main-menu li {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1.8em;
+      font-weight: bold; }
+      #site-wrapper .main-menu li a {
+        color: inherit;
+        text-decoration: none; }
+  #site-wrapper .content .frontpage .frontpage-image {
+    border: 10px solid white; }
+  #site-wrapper .content .frontpage .featured-news {
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    border-top: 4px solid red;
+    background: white;
+    overflow: hidden; }
+    #site-wrapper .content .frontpage .featured-news .news-col {
+      width: 490px;
+      float: left; }
+      #site-wrapper .content .frontpage .featured-news .news-col .date {
+        display: inline-block;
+        width: 80px;
+        vertical-align: top; }
+        #site-wrapper .content .frontpage .featured-news .news-col .date .date-text {
+          padding: 10px;
+          background: #f0f0f0; }
+          #site-wrapper .content .frontpage .featured-news .news-col .date .date-text .month {
+            text-align: right;
+            font-size: 1.5em;
+            font-weight: bold; }
+          #site-wrapper .content .frontpage .featured-news .news-col .date .date-text .year {
+            text-align: right;
+            font-size: 0.75em;
+            font-weight: bold; }
+      #site-wrapper .content .frontpage .featured-news .news-col .content {
+        display: inline-block;
+        width: 360px;
+        vertical-align: top;
+        padding: 0 20px; }
 

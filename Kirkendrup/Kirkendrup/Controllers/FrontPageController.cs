@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Kirkendrup.Models;
 using Umbraco.Web.Models;
+using Umbraco.Web;
 
 namespace Kirkendrup.Controllers
 {
@@ -15,7 +16,11 @@ namespace Kirkendrup.Controllers
 
         public ActionResult FrontPage(RenderModel renderModel)
         {
-			var model = new FrontPageModel();
+            var model = new FrontPageModel() {
+                Header = CurrentPage.GetPropertyValue<string>("header"),
+                BodyText = CurrentPage.GetPropertyValue<IHtmlString>("bodyText")
+            
+            };
 
             return View(model);
         }

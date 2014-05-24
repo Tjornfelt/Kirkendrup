@@ -1,6 +1,8 @@
-﻿@{
+﻿@using Kirkendrup.Models;
+
+@{
     Layout = null;
-    
+    var global = (GlobalModel)ViewBag.Global;
 }
 <!DOCTYPE html>
 <html>
@@ -14,9 +16,11 @@
             <header>
                 <a class="logo" href="/">Kirkendruphaven</a>
             </header>
+            @Html.Partial("_MainMenu", global.MainMenu)
 
-            <h2>Layout page</h2>
-            @RenderBody()
+            <div class="content">
+                @RenderBody()
+            </div>
         </div>
     </body>
 </html>
