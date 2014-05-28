@@ -16,8 +16,11 @@
             <header>
                 <a class="logo" href="/">Kirkendruphaven</a>
             </header>
-            @Html.Partial("_MainMenu", global.MainMenu)
 
+            @if(global.MainMenu != null)
+            {
+                @Html.Partial("_MainMenu", global.MainMenu)
+            }
             <div class="content">
                 @RenderBody()
             </div>
