@@ -5,11 +5,9 @@ using System.Web;
 
 namespace Kirkendrup.Models.HelperModels
 {
-    public class NavigationItem
+    public class Image
     {
-        public string Name { get; set; }
         public string Url { get; set; }
-        public bool Active { get; set; }
-        public IEnumerable<NavigationItem> Children { get; set; }
+        public string Name { get; set; }
     }
 }

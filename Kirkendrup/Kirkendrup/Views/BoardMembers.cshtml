@@ -1,0 +1,33 @@
+﻿@model Kirkendrup.Models.BoardMembersModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    <div class="boardmembers">
+        <h1>@Model.Header</h1>
+        @Model.BodyText
+
+        <div class="members">
+            @foreach (var member in Model.BoardMembers)
+            {
+                <div class="member">
+                    <div class="photo">
+                        @if(member.photo != null)
+                        {
+                            <img src="/imagegen.ashx?image=@member.photo.Url&amp;height=185&amp;width=135&amp;constrain=true&amp;pad=true" alt="@member.photo.Name" />
+                        }
+                        else
+                        {
+                            <img src="http://placehold.it/135x185" />
+                        }
+                    </div>
+                    <div class="text">
+                        <h2>@member.Title</h2>
+                        <p>@member.Name</p>
+                        <p>@member.ExtraInfo</p>
+                        <p><a href="mailto:@member.Email">Kontakt</a></p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

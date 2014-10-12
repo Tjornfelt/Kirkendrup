@@ -1,0 +1,32 @@
+﻿@model Kirkendrup.Models.PrivateAreaModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    <div class="private-area">
+
+        @if(Model.IsAuthorized)
+        {
+            using (Html.BeginUmbracoForm("MemberLogout", "MemberLoginSurface"))
+            {
+                <input type="submit" value="Logud" />
+            }
+            
+            <h1>@Model.Header</h1>
+            @Model.BodyText
+        }
+        else
+        {
+            <h1>@Model.Header</h1>
+            @Model.BodyText
+
+            using (Html.BeginUmbracoForm("MemberLogin", "MemberLoginSurface"))
+            {
+                <input type="text" id="username" name="username" />
+                <input type="text" id="password" name="password"/>
+                <input type="submit" value="Logind" />
+            }
+            
+            <p>@TempData["Status"]</p>
+        }
+    </div>
+}

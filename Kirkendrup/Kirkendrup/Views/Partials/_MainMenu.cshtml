@@ -6,9 +6,12 @@
     
     <nav>
         <ul class="main-menu">
+            <li>
+                <a href="/" title="Tilbage til forsiden">Forside</a>
+            </li>
             @foreach (var item in Model)
 	        {
-                <li>
+                <li @Html.Raw(item.Active? "class=\"active\"":string.Empty)>
                     <a href="@item.Url" title="@item.Name">@item.Name</a>
                 </li>		 
 	        }

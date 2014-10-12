@@ -24,7 +24,7 @@ namespace Kirkendrup.Controllers
             var frontPage = CurrentPage.AncestorOrSelf(1);
 
 			var global = new GlobalModel();
-            global.MainMenu = NavigationItemMapper.Map<NavigationItem>(frontPage);
+            global.MainMenu = NavigationItemMapper.Map<NavigationItem>(frontPage, CurrentPage);
             ViewBag.Global = global;
             /*
             global.isFrontpage = CurrentPage.Id == rootNode.Id;

@@ -1,0 +1,23 @@
+﻿@model Kirkendrup.Models.NewsPageModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <div class="newspage">
+        <div class="news-list">
+            @foreach (var news in Model.NewsItems)
+            {
+                <div class="news-col">
+                    <div class="date">
+                        <div class="date-text">
+                            <div class="month">@news.Date.ToString("dd.MMM.")</div>
+                            <div class="year">@news.Date.ToString("yyyy")</div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>@news.Header</h3>
+                        @news.BodyText
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

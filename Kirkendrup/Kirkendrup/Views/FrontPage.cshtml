@@ -4,36 +4,41 @@
     
     <div class="frontpage">
         <div class="frontpage-image">
-            <img src="http://placehold.it/960x280" />
-        </div>
-        <h1>@Model.Header</h1>
-        @Model.BodyText
-        <div class="featured-news">
-            <div class="news-col">
-                <div class="date">
-                    <div class="date-text">
-                        <div class="month">6.April</div>
-                        <div class="year">2014</div>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>Kirkendruphaven.dk opdateret</h3>
-                    <p>Bacon ipsum dolor sit amet prosciutto bresaola jerky andouille frankfurter pork. Jowl strip steak swine filet mignon corned beef pancetta porchetta tail. Boudin tenderloin meatball jowl tri-tip, ball tip bacon pancetta prosciutto flank ground round. Capicola spare ribs swine sausage pork chop hamburger. Pastrami fatback ham hock pig drumstick beef turducken. Pork belly jerky beef, boudin frankfurter rump flank.</p>
-                </div>
-            </div>
 
-            <div class="news-col">
-                <div class="date">
-                    <div class="date-text">
-                        <div class="month">6.April</div>
-                        <div class="year">2014</div>
+            @if(Model.Image != null)
+            {
+                <img src="@Model.Image.Url" width="980" height="280" alt="@Model.Image.Name" />
+            }
+            else
+            {
+                <img src="http://placehold.it/960x280" />
+            }
+        </div>
+        <div class="frontpage-content">
+            <h1>@Model.Header</h1>
+            @Model.BodyText
+        </div>
+        <div class="featured-news">
+
+            @foreach (var featuredNews in Model.FeaturedNews.Take(2))
+            {
+                <div class="news-col">
+                    <div class="date">
+                        <div class="date-text">
+                            <div class="month">@featuredNews.Date.ToString("dd.MMM.")</div>
+                            <div class="year">@featuredNews.Date.ToString("yyyy")</div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>@featuredNews.Header</h3>
+                        @featuredNews.BodyText
                     </div>
                 </div>
-                <div class="content">
-                    <h3>Kirkendruphaven.dk opdateret</h3>
-                    <p>Bacon ipsum dolor sit amet prosciutto bresaola jerky andouille frankfurter pork. Jowl strip steak swine filet mignon corned beef pancetta porchetta tail. Boudin tenderloin meatball jowl tri-tip, ball tip bacon pancetta prosciutto flank ground round. Capicola spare ribs swine sausage pork chop hamburger. Pastrami fatback ham hock pig drumstick beef turducken. Pork belly jerky beef, boudin frankfurter rump flank.</p>
-                </div>
-            </div>
+            }
+
+            
+
+            
         </div>
     </div>
 }

@@ -6,11 +6,10 @@ using Kirkendrup.Models.HelperModels;
 
 namespace Kirkendrup.Models
 {
-	public class FrontPageModel
+	public class PrivateAreaModel
 	{
 		public string Header { get; set; }
 		public IHtmlString BodyText { get; set; }
-        public Image Image { get; set; }
-        public IEnumerable<NewsItem> FeaturedNews { get; set; }
+        public bool IsAuthorized { get; set; }
 	}
 }

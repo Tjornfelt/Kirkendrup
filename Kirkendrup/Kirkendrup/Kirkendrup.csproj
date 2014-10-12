@@ -218,14 +218,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BoardMembersController.cs" />
+    <Compile Include="Controllers\MemberLoginSurfaceController.cs" />
+    <Compile Include="Controllers\PrivateAreaController.cs" />
+    <Compile Include="Controllers\TextPageController.cs" />
+    <Compile Include="Controllers\NewsPageController.cs" />
     <Compile Include="Controllers\FrontPageController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\NewsItemMapper.cs" />
+    <Compile Include="Mappers\ImageMapper.cs" />
     <Compile Include="Mappers\NavigationItemMapper.cs" />
+    <Compile Include="Models\BoardMembersModel.cs" />
+    <Compile Include="Models\PrivateAreaModel.cs" />
+    <Compile Include="Models\TextPageModel.cs" />
+    <Compile Include="Models\HelperModels\NewsItem.cs" />
+    <Compile Include="Models\NewsPageModel.cs" />
     <Compile Include="Models\FrontPageModel.cs" />
     <Compile Include="Models\GlobalModel.cs" />
+    <Compile Include="Models\HelperModels\BoardMember.cs" />
+    <Compile Include="Models\HelperModels\Image.cs" />
     <Compile Include="Models\HelperModels\NavigationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -331,6 +345,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Partials\_MainMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BoardMembers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NewsPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TextPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PrivateArea.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
