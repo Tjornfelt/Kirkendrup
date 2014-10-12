@@ -92,6 +92,9 @@ p {
 		.frontpage {
 			.frontpage-image {
 				border: 10px solid white;
+                img {
+                    display: block;
+                }
 			}
 			.frontpage-content {
 				padding: 0 20px;
@@ -142,6 +145,7 @@ p {
 					display: inline-block;
 					margin-right: -4px;
 					vertical-align: top;
+                    margin-bottom: 50px;
 					.photo {
 						display: inline-block;
 						width: 185px;

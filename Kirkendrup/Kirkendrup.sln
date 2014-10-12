@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kirkendrup", "Kirkendrup\Kirkendrup.csproj", "{CEA5CA06-8D90-4A54-9BD6-D20D49745173}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F9E134C8-EAB7-4724-9FD1-D2F7F6EEE5FD}"
@@ -8,6 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F9E134
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{05A519A0-8629-4B2F-A6D1-B349C67F5574}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\imagegen.dll = Lib\imagegen.dll
 	EndProjectSection
 EndProject
 Global
